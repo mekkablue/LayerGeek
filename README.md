@@ -33,6 +33,34 @@ Call multiple functions with semicolon as separator:
 
 You can also use the *Copy Custom Parameter for Instance* button in the Layer Geek window to copy the current input into the clipboard, and then, paste it in the Custom Parameter list in *File > Font Info > Instances*. Make sure you click into the parameter list field before pasting.
 
+### Usage Examples
+
+Here are some values and what they do:
+
+    correctPathDirection();removePathAtIndex_(0);correctPathDirection()
+
+This removes the outermost path and corrects path direction.
+
+    makeFirstComponent_(Layer.componentAtIndex_(1))
+
+This takes the second component and makes it the first one. You can use `Layer` for a nested reference to the Layer object.
+
+    removeComponentAtIndex_(Layer.componentCount()-1)
+
+Removes the last component.
+
+    addExtremePoints();cleanUpPaths();
+
+Adds extremes and cleans up paths (like *Layer > Tidy up path*).
+
+    removeAnchorWithName_("bottom")
+
+Removes bottom anchors.
+
+    setHints_(None);setGuideLines_(None)
+
+Deletes all hints and guidelines.
+
 ### System Requirements
 
 This plugin needs Glyphs 1.4.3 or later, running on OS X 10.7 or later. It has only been tested on OS X 10.9, though.
