@@ -229,14 +229,27 @@ class LayerGeek ( GSFilterPlugin ):
 		Item 0 in Arguments is the class-name. The consecutive items should be your filter options.
 		"""
 		try:
+			# set glyphList to all glyphs
+			glyphList = Font.glyphs
+			
 			# Override defaults with actual values from custom parameter:
 			if len( Arguments ) > 1:
+				
+				# change glyphList to include or exclude glyphs
+				if "exclude:" in Arguments[-1]:
+					excludeList = [ n.strip() for n in Arguments.pop(-1).replace("exclude:","").strip().split(",") ]
+					glyphList = [ g for g in glyphList if not g.name in excludeList ]
+				elif "include:" in Arguments[-1]:
+					includeList = [ n.strip() for n in Arguments.pop(-1).replace("include:","").strip().split(",") ]
+					glyphList = [ Font.glyphs[n] for n in includeList ]
+				
+				# process Arguments:
 				for thisArgument in Arguments[1:]:
 					layerFunction = str( thisArgument )
 				
-					# With these values, call your code on every glyph:
+					# With these values, call your code on every glyph in glyphList:
 					FontMasterId = Font.fontMasterAtIndex_(0).id
-					for Glyph in Font.glyphs:
+					for Glyph in glyphList:
 						Layer = Glyph.layerForKey_( FontMasterId )
 						self.processLayerWithValues( Layer, layerFunction ) # add your class variables here
 		except Exception as e:

@@ -31,6 +31,21 @@ Call multiple functions with semicolon as separator:
     Property: Filter
     Value: LayerGeek;correctPathDirection();removePathAtIndex_(0);correctPathDirection()
 
+Empty parentheses are optional. So you could type the same Value like this:
+
+    Property: Filter
+    Value: LayerGeek;correctPathDirection;removePathAtIndex_(0);correctPathDirection
+
+Only process certain glyphs with `include:` as the last argument in the chain:
+
+    Property: Filter
+    Value: LayerGeek;roundCoordinates;include:A,H,N
+
+Or exclude certain glyphs from processing with `exclude:` as the last argument:
+
+    Property: Filter
+    Value: LayerGeek;roundCoordinates;exclude:C,c,O,o,G,g,B,b
+
 You can also use the *Copy Custom Parameter for Instance* button in the Layer Geek window to copy the current input into the clipboard, and then, paste it in the Custom Parameter list in *File > Font Info > Instances*. Make sure you click into the parameter list field before pasting.
 
 ### Usage Examples
