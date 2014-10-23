@@ -76,9 +76,9 @@ Removes bottom anchors.
 
 Deletes all hints and guidelines.
 
-### System Requirements
+### Requirements
 
-This plugin needs Glyphs 1.4.3 or later, running on OS X 10.7 or later. It has only been tested on OS X 10.9, though.
+The plugin needs Glyphs 1.4.3 or higher, running on OS X 10.7 or later. I can only test it in current OS versions, and I assume it will not work in versions of Mac OS X older than 10.7.
 
 ### License
 
