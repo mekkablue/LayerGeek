@@ -76,6 +76,10 @@ Removes bottom anchors.
 
 Deletes all hints and guidelines.
 
+    addComponent_(GSComponent("B"))
+
+Adds the glyph `B` as a component to the layer.
+
 ### Requirements
 
 The plugin needs Glyphs 1.4.3 or higher, running on OS X 10.7 or later. I can only test it in current OS versions, and I assume it will not work in versions of Mac OS X older than 10.7.
