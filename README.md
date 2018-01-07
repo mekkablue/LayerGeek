@@ -10,9 +10,9 @@ You can set a keyboard shortcut in System Preferences.
 
 ### Installation
 
-1. Download the complete ZIP file and unpack it, or clone the repository.
-2. Double click the .glyphsFilter file. Confirm the dialog that appears in Glyphs.
-3. Restart Glyphs
+1. *Window > Plugin Manager.*
+2. Click the *Install* button next to the Layer Geek entry.
+3. Restart Glyphs.
 
 ### Usage Instructions
 
@@ -39,26 +39,28 @@ Empty parentheses are optional. So you could type the same Value like this:
 Only process certain glyphs with `include:` as the last argument in the chain:
 
     Property: Filter
-    Value: LayerGeek;roundCoordinates;include:A,H,N
+    Value: LayerGeek; roundCoordinates; include:A,H,N
 
 Or exclude certain glyphs from processing with `exclude:` as the last argument:
 
     Property: Filter
-    Value: LayerGeek;roundCoordinates;exclude:C,c,O,o,G,g,B,b
+    Value: LayerGeek; roundCoordinates; exclude:C,c,O,o,G,g,B,b
 
 You can also use the *Copy Custom Parameter for Instance* button in the Layer Geek window to copy the current input into the clipboard, and then, paste it in the Custom Parameter list in *File > Font Info > Instances*. Make sure you click into the parameter list field before pasting.
+
+Whitespace around semicolons is optional.
 
 ### Usage Examples
 
 Here are some values and what they do:
 
-    correctPathDirection();removePathAtIndex_(0);correctPathDirection()
+    correctPathDirection(); removePathAtIndex_(0); correctPathDirection()
 
 This removes the outermost path and corrects path direction.
 
     makeFirstComponent_(Layer.componentAtIndex_(1))
 
-This takes the second component and makes it the first one. You can use `Layer` for a nested reference to the Layer object.
+This takes the second component and makes it the first one. You can use `Layer` (with an uppercase L) for a nested reference to the Layer object.
 
     removeComponentAtIndex_(Layer.componentCount()-1)
 
@@ -66,7 +68,7 @@ Removes the last component.
 
     addExtremePoints();cleanUpPaths();
 
-Adds extremes and cleans up paths (like *Layer > Tidy up path*).
+Adds extremes and cleans up paths (like *Layer > Tidy up Paths*).
 
     removeAnchorWithName_("bottom")
 
@@ -82,12 +84,12 @@ Adds the glyph `B` as a component to the layer.
 
 ### Requirements
 
-The plugin needs Glyphs 1.4.3 or higher, running on OS X 10.7 or later. I can only test it in current OS versions, and I assume it will not work in versions of Mac OS X older than 10.7.
+The plugin needs Glyphs 2.4 or higher. It probably does not work in earlier versions.
 
 ### License
 
-Copyright 2014 Rainer Erich Scheichelbauer (@mekkablue).
-Based on sample code by Georg Seifert (@schriftgestalt).
+Copyright 2014-2018 Rainer Erich Scheichelbauer (@mekkablue).
+Based on sample code by Georg Seifert (@schriftgestalt) and Jan Gerner (@yanone).
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
