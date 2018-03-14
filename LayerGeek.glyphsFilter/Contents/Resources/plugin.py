@@ -60,7 +60,8 @@ class LayerGeek(FilterWithDialog):
 	def filter(self, Layer, inEditView, customParameters):
 		if customParameters:
 			# Called on font export, get value from customParameters:
-			layerFunctions = [customParameters[x] for x in range(len(customParameters))]
+			numberedParameters = [k for k in customParameters.keys() if type(k) is int]
+			layerFunctions = [customParameters[x] for x in sorted(numberedParameters)]
 		else:
 			# Called through UI, use stored value
 			layerFunctions = Glyphs.defaults['com.mekkablue.LayerGeek.layerFunction'].split(";")
