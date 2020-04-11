@@ -1,15 +1,13 @@
 # encoding: utf-8
+from __future__ import division, print_function, unicode_literals
 
 ###########################################################################################################
 #
 #
-#	Filter with dialog Plugin
+#	Filter without dialog Plugin
 #
 #	Read the docs:
-#	https://github.com/schriftgestalt/GlyphsSDK/tree/master/Python%20Templates/Filter%20with%20Dialog
-#
-#	For help on the use of Interface Builder:
-#	https://github.com/schriftgestalt/GlyphsSDK/tree/master/Python%20Templates
+#	https://github.com/schriftgestalt/GlyphsSDK/tree/master/Python%20Templates/Filter%20without%20Dialog
 #
 #
 ###########################################################################################################
@@ -28,6 +26,7 @@ class LayerGeek(FilterWithDialog):
 	# Text field in dialog
 	layerFunctionField = objc.IBOutlet()
 	
+	@objc.python_method
 	def settings(self):
 		self.menuName = Glyphs.localize({
 			'en': u'Layer Geek',
@@ -41,6 +40,7 @@ class LayerGeek(FilterWithDialog):
 		self.loadNib('IBdialog', __file__)
 	
 	# On dialog show
+	@objc.python_method
 	def start(self):
 		Glyphs.registerDefault('com.mekkablue.LayerGeek.layerFunction', 'correctPathDirection')
 		# Set value of text field
@@ -57,6 +57,7 @@ class LayerGeek(FilterWithDialog):
 		self.update()
 	
 	# Actual filter
+	@objc.python_method
 	def filter(self, Layer, inEditView, customParameters):
 		if customParameters:
 			# Called on font export, get value from customParameters:
@@ -77,12 +78,14 @@ class LayerGeek(FilterWithDialog):
 					# exit gracefully:
 					pass
 		
+	@objc.python_method
 	def generateCustomParameter( self ):
 		return "%s; %s" % (
 			self.__class__.__name__,
 			Glyphs.defaults['com.mekkablue.LayerGeek.layerFunction'] 
 		)
 	
+	@objc.python_method
 	def __file__(self):
 		"""Please leave this method unchanged"""
 		return __file__
