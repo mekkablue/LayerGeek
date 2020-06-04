@@ -13,15 +13,15 @@
 	<key>CFBundleName</key>
 	<string>LayerGeek</string>
 	<key>CFBundleVersion</key>
-	<string>8</string>
+	<string>9</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0</string>
+	<string>3.0.1</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/mekkablue/LayerGeek/master/LayerGeek.glyphsFilter/Contents/Info.plist</string>
 	<key>productPageURL</key>
 	<string>https://github.com/mekkablue/LayerGeek</string>
 	<key>productReleaseNotes</key>
-	<string>Glyphs 3 compatibility</string>
+	<string>Updated plugin binary.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright, Rainer Erich Scheichelbauer, 2014-2018</string>
 	<key>NSPrincipalClass</key>
